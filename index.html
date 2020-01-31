@@ -20,7 +20,7 @@
     </div>
 </body>
 <script>
-emojiMap = loadEmojis();
+    emojiMap = loadEmojis();
 emojiInts = emojiPoints();
 
 function loadEmojis() {
@@ -145,7 +145,6 @@ EmojiMosaic.prototype.imageLoaded = function() {
     }
 
     var emojisRendered = 0;
-
     // At each sample, place an Emoji according to the image data at that point.
     samples.forEach(function(sample) {
         var imageData, sums, i, red, green, blue, closest;
@@ -204,10 +203,12 @@ function dataURItoBlob(dataURI) {
     for (var i = 0; i < binary.length; i++) {
         array.push(binary.charCodeAt(i));
     }
+    alert("转化完成，可点击下载");
     return new Blob([new Uint8Array(array)], { type: 'image/jpeg' });
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {
+
     var inputEl = document.querySelector('input');
     document.querySelector('input').addEventListener('change', function() {
         // When a file is uploaded, initialize
